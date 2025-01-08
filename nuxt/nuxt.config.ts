@@ -9,17 +9,23 @@ export default defineNuxtConfig({
       "Kode Mono": true,
     },
   },
+  runtimeConfig: {
+    apiSecret: process.env.API_SECRET,
+    dev: {
+      apibase: process.env.NUXT_DEV_API_BASE,
+    },
+    prod: {
+      apibase: process.env.NUXT_PROD_API_BASE,
+    },
+    public: {
+      apiBase: process.env.NUXT_PUBLIC_API_BASE,
+    },
+  },
 
-  // este componente faz com que o nuxt reconheça os componentes criados na pasta components
-  // e pode ter pasta na dentro da pasta de componentes que funciona do mesmo jeito sem precisar importar
   components: [
     {
       path: "~/components",
       pathPrefix: false,
     },
   ],
-  // alias: {
-  //   imgs: resolve(__dirname, "./assets/img"),
-  //   "!!": resolve(__dirname, "./node_modules"),
-  // },
 });

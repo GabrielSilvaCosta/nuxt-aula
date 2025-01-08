@@ -8,7 +8,12 @@
   <Footer />
 </template>
 
-<script setup></script>
+<script setup>
+// usando o useRuntimeConfig para pegar as variaveis de ambiente
+const runtimeConfig = useRuntimeConfig();
+
+console.log(runtimeConfig);
+</script>
 
 <style lang="css">
 @import "@/assets/css/style.css";
